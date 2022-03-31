@@ -61,13 +61,16 @@ import { View } from '../components/Themed';
        screenOptions={{
          tabBarActiveTintColor: '#fff',
          tabBarActiveBackgroundColor: '#000',
-         tabBarInactiveBackgroundColor:'#000'
+         tabBarInactiveBackgroundColor:'#000',
+         tabBarStyle: {
+           height: 70,
+         }
        }}>
        <BottomTab.Screen
          name="Home"
          component={HomeScreen}
          options={{
-           title: 'Home',
+           title: 'Accueil',
            tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
          }}
        />
@@ -75,7 +78,7 @@ import { View } from '../components/Themed';
          name="Collection"
          component={CollectionScreen}
          options={{
-           title: 'Collection',
+           title: 'Mes collections',
            tabBarIcon: ({ color }) => <TabBarIcon name="bookmark" color={color} />,
          }}
        />
@@ -83,7 +86,7 @@ import { View } from '../components/Themed';
          name="Library"
          component={LibraryScreen}
          options={{
-           title: 'Biblothèque',
+           title: 'Ma biblothèque',
            tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
          }}
        />
