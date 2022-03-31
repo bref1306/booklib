@@ -18,6 +18,8 @@
  import HomeScreen from '../screens/HomeScreen';
  import CollectionScreen from '../screens/CollectionScreen';
  import LibraryScreen from '../screens/LibraryScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import { View } from '../components/Themed';
  
  export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
    return (
@@ -57,7 +59,9 @@
      <BottomTab.Navigator
        initialRouteName="Home"
        screenOptions={{
-         tabBarActiveTintColor: Colors[colorScheme].tint,
+         tabBarActiveTintColor: '#fff',
+         tabBarActiveBackgroundColor: '#000',
+         tabBarInactiveBackgroundColor:'#000'
        }}>
        <BottomTab.Screen
          name="Home"

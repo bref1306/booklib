@@ -10,6 +10,7 @@ import * as React from 'react';
 import LoginScreen from './screens/auth/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import Navigation, { BottomTabNavigator } from './navigation';
+import RegisterScreen from './screens/auth/RegisterScreen';
 
 
 export default function App() {
@@ -100,15 +101,19 @@ if (!isLoadingComplete) {
    <AuthContext.Provider value={authContext}>
      <NavigationContainer>
        <Stack.Navigator>
-       {state.userToken == null ? (
+       {state.userToken != null ? (
            // No token found, user isn't signed in
            // <SafeAreaProvider>
            //     <Navigation colorScheme={colorScheme} />
            // </SafeAreaProvider>
-           <Stack.Screen
-           name="Login"
-           component={LoginScreen}
-         />
+           <>
+            <Stack.Screen
+               name="Login"
+               component={LoginScreen} />
+            <Stack.Screen
+               name="Register"
+               component={RegisterScreen} />
+          </>
            
          ) : (
            // User is signed in
