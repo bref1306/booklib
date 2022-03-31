@@ -16,7 +16,6 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import HomeScreen from '../screens/HomeScreen';
-import AccountScreen from '../screens/AccountScreen';
 import CollectionScreen from '../screens/CollectionScreen';
 import LibraryScreen from '../screens/LibraryScreen';
 
@@ -51,7 +50,7 @@ function RootNavigator() {
  */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
+export function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
