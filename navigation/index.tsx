@@ -62,6 +62,11 @@
          tabBarInactiveBackgroundColor:'#000',
          tabBarStyle: {
            height: 70,
+           elevation: 0,
+           shadowOffset: {
+            width: 0, height: 0 // for iOS
+          },
+          borderTopColor: '#000'
          }
        }}>
        <BottomTab.Screen

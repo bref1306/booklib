@@ -21,7 +21,8 @@ export default function RecentlyAdd() {
 const styles = StyleSheet.create({
     mainContainer: {
         flexDirection: 'column',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        height: 300,
     },
     container: {
         flexDirection: 'row',
