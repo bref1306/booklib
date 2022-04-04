@@ -7,7 +7,7 @@ import {BottomTabNavigator} from './navigation';
 import RegisterScreen from './screens/auth/RegisterScreen';
 import {useEffect, useMemo, useState} from "react";
 import { AuthContext } from './store/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SecureStore from 'expo-secure-store';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,11 +32,10 @@ export default function App() {
     const authMemo = useMemo(() => ({
         connect: async(data: any) => {
             if(data) {
-                console.log(data);
                 if(data.token) {
                     try {
                         setAuth(true);
-                        await AsyncStorage.setItem("@storage_key", data.token);
+                        await SecureStore.setItemAsync("storage_key", data.token);
                     } catch (e) {
                         console.log(e);
                     }
@@ -44,7 +43,7 @@ export default function App() {
             }
         },
         signOut: async () => {
-            await AsyncStorage.clear();
+            await SecureStore.deleteItemAsync("storage_key");
             setAuth(false);
         }
     }), []);
@@ -53,7 +52,7 @@ export default function App() {
         const verifyToken = async () => {
             let token = null;
             try {
-                token = await AsyncStorage.getItem("@storage_key");
+                token = await SecureStore.getItemAsync("storage_key");
             } catch (e){
                 console.log(e);
             }
