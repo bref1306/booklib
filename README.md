@@ -22,7 +22,12 @@ Puis rentrer des données dans le body avec ces champs :
 }
 ```
 
+<<<<<<< HEAD
 Le lien Swagger menant à toutes les routes :
+=======
+## URL disponibles 
+Le lien Swagger menant à toutes les routes : 
+>>>>>>> 1b91656f17a4c73bf310b3e1b5c5d96aa00fba59
 <a href="https://booklib-app-mobile.herokuapp.com/api/" target="_blank">booklib-app-mobile.herokuapp.com/api/</a>
 
 ## Workers
