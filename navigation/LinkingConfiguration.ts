@@ -50,7 +50,13 @@ const linking: LinkingOptions<RootStackParamList> = {
               CollectionScreen: 'collection',
             },
           },
+          Deconection: {
+            screens: {
+              DeconectionScreen: 'deconection',
+            },
+          },
         },
+        
       },
       Modal: 'modal',
       NotFound: '*',

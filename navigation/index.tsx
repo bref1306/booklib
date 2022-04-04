@@ -8,7 +8,7 @@
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
  import * as React from 'react';
- import { ColorSchemeName, Pressable } from 'react-native';
+ import { ColorSchemeName, Pressable, TouchableOpacity } from 'react-native';
  
  import Colors from '../constants/Colors';
  import useColorScheme from '../hooks/useColorScheme';
@@ -19,6 +19,9 @@
  import CollectionScreen from '../screens/CollectionScreen';
  import LibraryScreen from '../screens/LibraryScreen';
 import BookScreen from '../screens/BookScreen';
+import DeconectionScreen from '../screens/DeconectionScreen';
+import {AuthContext} from "../store/auth";
+import  {useContext} from 'react';
  
  export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
    return (
@@ -51,8 +54,10 @@ import BookScreen from '../screens/BookScreen';
   */
  const BottomTab = createBottomTabNavigator<RootTabParamList>();
  
+ 
  export function BottomTabNavigator() {
    const colorScheme = useColorScheme();
+   const auth = useContext(AuthContext);
  
    return (
      <BottomTab.Navigator
@@ -79,10 +84,12 @@ import BookScreen from '../screens/BookScreen';
          }}
        />
        <BottomTab.Screen
+      
          name="Collection"
          component={CollectionScreen}
          options={{
            title: 'Mes collections',
+           
            tabBarIcon: ({ color }) => <TabBarIcon name="bookmark" color={color} />,
          }}
        />
@@ -95,13 +102,14 @@ import BookScreen from '../screens/BookScreen';
          }}
        />
        <BottomTab.Screen
-         name="Book"
-         component={BookScreen}
+         name="Deconection"
+         component={DeconectionScreen}
          options={{
-           title: 'Livre',
-           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+           title: 'deconection',
+           tabBarIcon: ({ color }) => <TabBarIcon name="power-off" color={color} />
          }}
        />
+       
      </BottomTab.Navigator>
    );
  }
