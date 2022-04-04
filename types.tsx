@@ -55,3 +55,12 @@ export type ButtonProp = {
   text?: string,
   action?: any,
 }
+
+export type FormErrorProps = {
+  errors: ErrorProps[];
+}
+
+export type ErrorProps = {
+  field: string,
+  messages: string[]
+}
