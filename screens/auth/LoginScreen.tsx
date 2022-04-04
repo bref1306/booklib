@@ -21,7 +21,7 @@ export default function Login ({navigation}: any) {
     const handleSubmit = async () => {
         setErrors([]);
 
-        await axios.post("http://192.168.127.66:3000/user/login", {email, password})
+        await axios.post("https://booklib-app-mobile.herokuapp.com/user/login", {email, password})
             .then((result) => {
                 auth.connect(result.data);
             })

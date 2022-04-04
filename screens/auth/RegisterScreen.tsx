@@ -20,7 +20,7 @@ export default function RegisterScreen ({ navigation }: any) {
     const auth = useContext(AuthContext);
 
     const handleSubmit = async () => {
-        await axios.post('http://192.168.127.66:3000/user/register', {email, password, pseudo})
+        await axios.post('https://booklib-app-mobile.herokuapp.com/user/register', {email, password, pseudo})
             .then((result)=>{
                 auth.connect(result.data);
             })
