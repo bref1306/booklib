@@ -15,8 +15,8 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
       <View style={styles.container}>
         <RecentlyAdd navigation={navigation}></RecentlyAdd>
         <View style={styles.logo}>
-          <TouchableOpacity onPress={() => auth.signOut()} style={{backgroundColor: 'red'}}>
-            <Text style={{fontSize:16}}>Deconnecter</Text>
+          <TouchableOpacity onPress={() => auth.signOut()} style={{backgroundColor: 'red',width:'100%',height:20}}>
+            <Text style={{fontSize:18}}>Deconnecter</Text>
           </TouchableOpacity>
         <FontAwesome name="book" size={30} style={{ color:'red' }} />
         </View>

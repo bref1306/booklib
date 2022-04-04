@@ -7,6 +7,7 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {StyleProp, ViewStyle} from "react-native";
+import DeconectionScreen from './screens/DeconectionScreen';
 
 declare global {
   namespace ReactNavigation {
@@ -33,6 +34,7 @@ export type RootTabParamList = {
   Collection: undefined;
   Library: undefined;
   Book: undefined;
+  Deconection:undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
