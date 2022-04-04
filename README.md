@@ -5,7 +5,6 @@
   <h1>Application BOOKLIB</h1>
 </p>
 
-
 ## Authentification via Postman
 
 L'api créée avec Nest JS est mise en ligne chez Heroku.
@@ -15,13 +14,20 @@ Pour créer un compte via une requête POST il suffit de copier ce lien :
 
 Puis rentrer des données dans le body avec ces champs :
 
-````json
+```json
 {
-    "pseudo": "user",
-    "email": "user@gmail.com",
-    "password": "motdepasse"
+  "pseudo": "user",
+  "email": "user@gmail.com",
+  "password": "motdepasse"
 }
-````
+```
 
-Le lien Swagger menant à toutes les routes : 
+Le lien Swagger menant à toutes les routes :
 <a href="https://booklib-app-mobile.herokuapp.com/api/" target="_blank">booklib-app-mobile.herokuapp.com/api/</a>
+
+## Workers
+
+- Auriane (Dev Front,Hebergement de l'api,documentation)
+- Badis(Dev Front)
+- Dorian( Dev Back,Dev Front)
+- Omar(Dev Front,Dev Back,documentation)
