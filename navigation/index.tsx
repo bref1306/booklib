@@ -18,6 +18,7 @@
  import HomeScreen from '../screens/HomeScreen';
  import CollectionScreen from '../screens/CollectionScreen';
  import LibraryScreen from '../screens/LibraryScreen';
+import BookScreen from '../screens/BookScreen';
  
  export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
    return (
@@ -90,6 +91,14 @@
          component={LibraryScreen}
          options={{
            title: 'Ma biblothèque',
+           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+         }}
+       />
+       <BottomTab.Screen
+         name="Book"
+         component={BookScreen}
+         options={{
+           title: 'Livre',
            tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
          }}
        />

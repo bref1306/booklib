@@ -1,8 +1,11 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { StyleSheet, Image, FlatList } from 'react-native';
+import { StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
+import navigation from '../../navigation';
+import BookScreen from '../../screens/BookScreen';
 import { Text, View } from '../Themed';
 
-export default function BookRecentlyAdd() {
+export const BookRecentlyAdd = (props: { navigation: any; }) => {
     const DATA = [
         {
           id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -22,18 +25,22 @@ export default function BookRecentlyAdd() {
         },
       ];
 
-    const Item = ({  }) => (
-        <View style={styles.imageBloc}>
-            <Image style={{ width: '100%', height: 130}}  source={require('../../assets/images/example-book.png')}></Image>
-            <Text>Description</Text>
-            <Text>Titre</Text>
-        </View>
-    );
+    const Stack = createNativeStackNavigator();
     return (
         <FlatList
         horizontal={true}
         data={DATA}
-        renderItem={Item}
+        renderItem={({item}) => { 
+            return <TouchableOpacity onPress={() => 
+               { 
+                    <Stack.Screen  name="Book" component={BookScreen} />
+                   props.navigation.navigate('Book')}}>
+                <View style={styles.imageBloc}>
+                    <Image style={{ width: '100%', height: 130}}  source={require('../../assets/images/example-book.png')}></Image>
+                    <Text>Description</Text>
+                    <Text>Titre</Text>
+                </View>
+            </TouchableOpacity>}}
         keyExtractor={(item) => item.id}
       />
     );
@@ -53,3 +60,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     }
   });
+
+  
+export default BookRecentlyAdd;

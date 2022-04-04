@@ -4,17 +4,15 @@ import { StyleSheet, Image } from 'react-native';
 import { Text, View } from '../Themed';
 import BookRecentlyAdd from './book_recently_add';
 
-export default function RecentlyAdd() {
+const RecentlyAdd = (props: { navigation: any; }) =>  {
     return (
-      
-    <View style={styles.mainContainer}>
-        <View style={styles.container}>
-            <FontAwesome name="bookmark" size={30} style={{ marginRight: 20 }} />
-            <Text style={{ fontSize: 20 }}>Récemment ajoutés</Text>
+        <View style={styles.mainContainer}>
+            <View style={styles.container}>
+                <FontAwesome name="bookmark" size={30} style={{ marginRight: 20 }} />
+                <Text style={{ fontSize: 20 }}>Récemment ajoutés</Text>
+            </View>
+            <BookRecentlyAdd navigation={props.navigation}></BookRecentlyAdd>
         </View>
-        <BookRecentlyAdd></BookRecentlyAdd>
-    </View>
-
     );
   }
   
@@ -31,3 +29,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
   });
+
+  export default RecentlyAdd;

@@ -11,6 +11,7 @@ import LoginScreen from './screens/auth/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import Navigation, { BottomTabNavigator } from './navigation';
 import RegisterScreen from './screens/auth/RegisterScreen';
+import BookScreen from './screens/BookScreen';
 
 
 export default function App() {
@@ -101,7 +102,7 @@ if (!isLoadingComplete) {
    <AuthContext.Provider value={authContext}>
      <NavigationContainer>
        <Stack.Navigator>
-       {state.userToken != null ? (
+       {state.userToken == null ? (
            // No token found, user isn't signed in
            // <SafeAreaProvider>
            //     <Navigation colorScheme={colorScheme} />

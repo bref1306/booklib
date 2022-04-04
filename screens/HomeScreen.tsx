@@ -9,7 +9,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={{backgroundColor: '#000', height: '100%'}}>
       <View style={styles.container}>
-        <RecentlyAdd></RecentlyAdd>
+        <RecentlyAdd navigation={navigation}></RecentlyAdd>
         <View style={styles.logo}>
         <FontAwesome name="book" size={30} style={{ color:'red' }} />
         </View>
